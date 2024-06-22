@@ -36,7 +36,6 @@
     <section id="about" class="section">
       <div class="container">
         <div class="content">
-          <img id="banner" src="banner.jpg" alt="Banner" height="200" />
           <h2>About Me</h2>
           <p>
             Hi! I am Banoth Prashanth, a final-year undergraduate student at
@@ -50,6 +49,7 @@
             cutting-edge software development projects.
           </p>
         </div>
+        <img id="banner" src="banner.jpg" alt="Banner" height="300" />
       </div>
     </section>
 
@@ -63,7 +63,7 @@
               <h3>B.Tech in Computer Science Engineering</h3>
               <p>Vignana Bharathi Institute of Technology, Hyderabad</p>
               <p>2020 - 2024</p>
-              <p>CGPA: 7.7</p>
+              <p>CGPA: 7.6</p>
             </div>
           </div>
           <div class="event">
@@ -127,25 +127,6 @@
       <div class="container">
         <h2>Projects</h2>
         <div class="project">
-          <h3>Erith-Calculator</h3>
-          <p>
-            Overview: "ERITH is a calculator app, made using HTML, CSS and
-            JavaScript, that provides simple, accurate, and efficient
-            calculations, offering all arithmetic operations to meet individual
-            needs. It ensures complete responsiveness over all devices."
-          </p>
-          <p>
-            GitHub Link:
-            <a href="https://github.com/prashanth370/erith.git" target="_blank"
-              >Erith-Calculator GitHub</a
-            >
-          </p>
-          <p>
-            Host Link:
-            <a href="https://erith-calculator.netlify.app/" target="_blank"
-              >Erith Calculator App</a
-            >
-          </p>
           <h3>Weather Predict App</h3>
           <p>
             Overview: "This Weather App, created using HTML, CSS, and
@@ -154,49 +135,17 @@
             current weather conditions and forecasts enhancing user access to
             vital meteorological information."
           </p>
-          <p>
-            GitHub Link:
-            <a
-              href="https://github.com/prashanth370/weather-predict.git"
-              target="_blank"
-              >Weather Predict GitHub</a
-            >
-          </p>
-          <p>
-            Host Link:
-            <a href="https://weather-predict1.netlify.app/" target="_blank"
-              >Weather Predict App</a
-            >
-          </p>
-          <h3>
-            Deep learning based assessment of Parkinson's disease severity
-          </h3>
-          <p>
-            Overview: "Led the development of a system using Python and
-            TensorFlow for early Parkinson's Disease detection and severity
-            assessment. Implemented deep learning algorithms, resulting in
-            improved accuracy of detection by 72%. Also participated in
-            collaborative project work that honed leadership and team working
-            skills."
-          </p>
-          <p>
-            GitHub Link:
-            <a
-              href="https://github.com/prashanth370/Deep-Learning-based-assessment-of-Parkinson-s-disease-severity.git"
-              target="_blank"
-              >Parkinson-s-disease-severity GitHub</a
-            >
-          </p>
         </div>
       </div>
     </section>
+
     <!-- Resume Section -->
     <section id="resume" class="section">
       <div class="container">
         <h2>Resume</h2>
         <p>Feel free to check out my resume:</p>
         <a
-          href="https://drive.google.com/file/d/1MBsrktuu2tToeXiJaVo3GB7rRoeET8DV/view?usp=sharing"
+          href="https://drive.google.com/file/d/1kbM7ZV0cN52wJrYbEHKlMlb2EAuQccqQ/view?usp=sharing"
           target="_blank"
         >
           View Resume
@@ -209,13 +158,19 @@
       <div class="container">
         <h2>Contact</h2>
         <p>Feel free to reach out to me. Let's connect!</p>
-        <div class="contact-form">
+        <form
+          class="contact-form"
+          method="POST"
+          action="http://localhost:3000/send"
+        >
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" required />
           <label for="email">Email:</label>
           <input type="email" id="email" name="email" required />
+          <label for="comments">Comments:</label>
+          <textarea id="comments" name="comments" rows="4" required></textarea>
           <button type="submit">Send Message</button>
-        </div>
+        </form>
         <p>Or connect with me through the following links:</p>
         <div class="social-links">
           <ul>
@@ -260,6 +215,16 @@
         var navLinks = document.getElementById("nav-links");
         navLinks.style.display =
           navLinks.style.display === "block" ? "none" : "block";
+      }
+
+      function readResponses() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var comments = document.getElementById("comments").value;
+
+        console.log("Name: " + name);
+        console.log("Email: " + email);
+        console.log("Comments: " + comments);
       }
     </script>
   </body>
